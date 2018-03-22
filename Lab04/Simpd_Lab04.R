@@ -1,0 +1,5 @@
+library(ahp)
+ahpFile <- system.file("extdata", "cameraLab4.ahp", package="ahp")
+cameraAhp <- Load(ahpFile)
+Calculate(cameraAhp)
+AnalyzeTable(cameraAhp, decisionMaker = "Dad")

@@ -1,0 +1,88 @@
+Version: 2.0
+Alternatives: &alternatives
+  Sony Alpha a6000 (ILCE-6000LB):
+    price: 2499
+    resolution: 24.3
+    rangeSensitivity: 100-25600
+    lens: Sony E 16-50 mm f/3.5-5.6 PZ OSS
+  Fujifilm X-A10:
+    price: 1739
+    resolution: 16.3
+    rangeSensitivity: 100-25600
+    lens: XC 16-50mm f/3.5-5.6 OIS II
+  Panasonic DC-GH5S:
+    price: 10199
+    resolution: 10.2
+    rangeSensitivity: 160-51200
+    lens: -
+  Sony Alpha a5100 (ILCE-5100L):
+    price: 1599
+    resolution: 24.3
+    rangeSensitivity: 100-25600
+    lens: Sony E 16-50 mm f/3.5-5.6 PZ OSS
+  Panasonic Lumix DMC-G7 14-42:
+    price: 2499
+    resolution: 16.0
+    rangeSensitivity: 200-25600
+    lens: G Vario 14-42mm f/3,5-5,6 ASPH. MEGA O.I.S.
+  Sony Alpha a7 II (ILCE-7M2):
+    price: 4999
+    resolution: 24.3
+    rangeSensitivity: 100-25600
+    lens: -
+  Panasonic Lumix DMC-G80:
+    price: 3849
+    resolution: 16.0
+    rangeSensitivity: 200-25600
+    lens: Lumix G Vario 12-60mm / f3,5-5.6 ASPH. / POWER O.I.S.
+  Panasonic Lumix DMC-GX80:
+    price: 2449
+    resolution: 16.0
+    rangeSensitivity: 200-25600
+    lens: LUMIX G VARIO H-FS14140-K 14-140 mm f/3,5 - 5,6
+  Sony Alpha a6300 (ILCE-6300L):
+    price: 4399
+    resolution: 24.2
+    rangeSensitivity: 100-51200
+    lens: Sony E 16-50 mm f/3.5-5.6 PZ OSS
+  Panasonic Lumix DMC-GX800K:
+    price: 1699
+    resolution: 16.84
+    rangeSensitivity: 100-25600
+    lens: 
+  Panasonic Lumix DMC-G7:
+    price: 2499
+    resolution: 16.0
+    rangeSensitivity: 200-25600
+    lens: LUMIX G VARIO 12-32mm / F3.5-5.6 ASPH. / MEGA O.I.S.
+  Sony Alpha a7K - ILCE-7K:
+    price: 3495
+    resolution: 24.3
+    rangeSensitivity: 100-25600
+    lens: -
+Goal:
+  name: Choosing camera
+  preferences:
+    pairwise:
+      - [price, resolution, 3]
+      - [price, rangeSensitivity, 3]
+      - [resolution, rangeSensitivity, 1]
+  children: 
+    prices:
+      preferences:
+          pairwiseFunction: 
+            function(a1, a2) min(9, max(1/9, a2$price/a1$price))
+      children: *alternatives 
+    resolution: 
+      preferences:
+          pairwiseFunction: 
+            function(a1, a2) min(9, max(1/9, a1$resolution/a2$resolution))
+      children: *alternatives
+    rangeSensitivity:
+      preferences:
+          scoreFunction:
+            function(a) a$rangeSensitivity/2.5
+      children: *alternatives
+#
+# End of Goal Section
+#####################################
