@@ -49,7 +49,7 @@ Alternatives: &alternatives
     price: 1699
     resolution: 16.84
     rangeSensitivity: 100-25600
-    lens: 
+    lens: -
   Panasonic Lumix DMC-G7:
     price: 2499
     resolution: 16.0

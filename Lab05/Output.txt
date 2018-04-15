@@ -1,0 +1,492 @@
+$call
+neuralnet(formula = Output ~ Input, data = trainingdata, hidden = c(5, 
+    3), threshold = 0.01)
+
+$response
+        Output
+1  22.89128189
+2  28.64161136
+3  21.78912023
+4  64.91320007
+5  71.52452287
+6 146.55978725
+
+$covariate
+             [,1]
+[1,]  9.801633975
+[2,] 11.255089666
+[3,]  9.495092353
+[4,] 17.414354598
+[5,] 18.233244745
+[6,] 24.874492411
+
+$model.list
+$model.list$response
+[1] "Output"
+
+$model.list$variables
+[1] "Input"
+
+
+$err.fct
+function (x, y) 
+{
+    1/2 * (y - x)^2
+}
+<environment: 0x000000001b9552d8>
+attr(,"type")
+[1] "sse"
+
+$act.fct
+function (x) 
+{
+    1/(1 + exp(-x))
+}
+<environment: 0x000000001b9552d8>
+attr(,"type")
+[1] "logistic"
+
+$linear.output
+[1] TRUE
+
+$data
+         Input       Output
+1  9.801633975  22.89128189
+2 11.255089666  28.64161136
+3  9.495092353  21.78912023
+4 17.414354598  64.91320007
+5 18.233244745  71.52452287
+6 24.874492411 146.55978725
+
+$net.result
+$net.result[[1]]
+          [,1]
+1  22.67021136
+2  28.66228706
+3  21.99110302
+4  64.91088266
+5  71.52516378
+6 146.56138760
+
+
+$weights
+$weights[[1]]
+$weights[[1]][[1]]
+            [,1]           [,2]           [,3]        [,4]        [,5]
+[1,] 3.351885604 -10.0063975672 -1.38930604435 1.980792583 1.952859140
+[2,] 3.589377673   0.5433999698 -0.01629462703 3.689551554 3.703087257
+
+$weights[[1]][[2]]
+              [,1]          [,2]          [,3]
+[1,] -0.4410487323 -0.3030534907  -2.240256157
+[2,] -0.1625481631 -2.3632146125  -2.046803608
+[3,] 51.8655957642  8.6259292604  13.703253254
+[4,] -3.1761340499 -8.3580400169 -13.788710927
+[5,] -0.1169402937  0.1903919126  -1.982329342
+[6,] -0.3097267443 -1.2987600973  -2.210726747
+
+$weights[[1]][[3]]
+            [,1]
+[1,] 10.21931613
+[2,] 49.28220436
+[3,] 41.12628487
+[4,] 49.95358158
+
+
+
+$startweights
+$startweights[[1]]
+$startweights[[1]][[1]]
+              [,1]           [,2]         [,3]          [,4]          [,5]
+[1,] -0.6481143962 -0.05032318646 0.4438941093 -1.2192074170 -0.1471408602
+[2,] -0.4106223266 -0.38448351551 0.6912247488  0.4895515539  1.6030872570
+
+$startweights[[1]][[2]]
+               [,1]           [,2]          [,3]
+[1,]  0.14386812590  0.90581863498  0.1847077353
+[2,]  0.42236869506 -1.15434248682  0.3781602847
+[3,] -0.39107115667 -0.46003218899 -0.8192365306
+[4,] -0.01500012945  0.24444699538 -0.7609303011
+[5,]  0.46797656445  1.39926403826  0.4426345504
+[6,]  0.27519011390 -0.08988797158  0.2142371451
+
+$startweights[[1]][[3]]
+              [,1]
+[1,]  1.2443479004
+[2,]  0.4684546427
+[3,]  0.1306849844
+[4,] -0.3126481413
+
+
+
+$generalized.weights
+$generalized.weights[[1]]
+               [,1]
+1 -0.00497008353656
+2 -0.00814803706953
+3 -0.00434368926691
+4 -0.00129458303694
+5 -0.00221428665622
+6 -0.00003732621454
+
+
+$result.matrix
+                                      1
+error                     0.04505252585
+reached.threshold         0.00961157786
+steps                 17807.00000000000
+Intercept.to.1layhid1     3.35188560385
+Input.to.1layhid1         3.58937767339
+Intercept.to.1layhid2   -10.00639756720
+Input.to.1layhid2         0.54339996979
+Intercept.to.1layhid3    -1.38930604435
+Input.to.1layhid3        -0.01629462703
+Intercept.to.1layhid4     1.98079258296
+Input.to.1layhid4         3.68955155394
+Intercept.to.1layhid5     1.95285913984
+Input.to.1layhid5         3.70308725699
+Intercept.to.2layhid1    -0.44104873229
+1layhid.1.to.2layhid1    -0.16254816314
+1layhid.2.to.2layhid1    51.86559576419
+1layhid.3.to.2layhid1    -3.17613404989
+1layhid.4.to.2layhid1    -0.11694029374
+1layhid.5.to.2layhid1    -0.30972674430
+Intercept.to.2layhid2    -0.30305349070
+1layhid.1.to.2layhid2    -2.36321461250
+1layhid.2.to.2layhid2     8.62592926038
+1layhid.3.to.2layhid2    -8.35804001694
+1layhid.4.to.2layhid2     0.19039191259
+1layhid.5.to.2layhid2    -1.29876009726
+Intercept.to.2layhid3    -2.24025615721
+1layhid.1.to.2layhid3    -2.04680360784
+1layhid.2.to.2layhid3    13.70325325381
+1layhid.3.to.2layhid3   -13.78871092724
+1layhid.4.to.2layhid3    -1.98232934209
+1layhid.5.to.2layhid3    -2.21072674742
+Intercept.to.Output      10.21931612680
+2layhid.1.to.Output      49.28220436388
+2layhid.2.to.Output      41.12628487284
+2layhid.3.to.Output      49.95358158467
+
+attr(,"class")
+[1] "nn"
+> 
+> #Plot the neural network
+> plot(net.myfunc)
+> 
+> #Test the neural network on some training data
+> testdata <- as.data.frame((2:20)*0.5) #Generate some numbers between 1 and 10
+> net.results <- compute(net.myfunc, testdata) #Run them through the neural network
+> 
+> #Lets see what properties net.myfunc has
+> ls(net.results)
+[1] "net.result" "neurons"   
+> 
+> #Lets see the results
+> print(net.results$net.result)
+             [,1]
+ [1,] 18.34175172
+ [2,] 18.36922876
+ [3,] 18.40785450
+ [4,] 18.45134103
+ [5,] 18.49968279
+ [6,] 18.55419978
+ [7,] 18.61685438
+ [8,] 18.69028931
+ [9,] 18.77803405
+[10,] 18.88481451
+[11,] 19.01698894
+[12,] 19.18316518
+[13,] 19.39508674
+[14,] 19.66892591
+[15,] 20.02720171
+[16,] 20.50166689
+[17,] 21.13769694
+[18,] 22.00095881
+[19,] 23.18731381
+> 
+> #Lets display a better version of the results
+> cleanoutput <- cbind(testdata,(testdata^2)+exp(-testdata),
++                      as.data.frame(net.results$net.result))
+> colnames(cleanoutput) <- c("Input","Expected Output","Neural Net Output")
+> print(cleanoutput)
+   Input Expected Output Neural Net Output
+1    1.0     1.367879441       18.34175172
+2    1.5     2.473130160       18.36922876
+3    2.0     4.135335283       18.40785450
+4    2.5     6.332084999       18.45134103
+5    3.0     9.049787068       18.49968279
+6    3.5    12.280197383       18.55419978
+7    4.0    16.018315639       18.61685438
+8    4.5    20.261108997       18.69028931
+9    5.0    25.006737947       18.77803405
+10   5.5    30.254086771       18.88481451
+11   6.0    36.002478752       19.01698894
+12   6.5    42.251503439       19.18316518
+13   7.0    49.000911882       19.39508674
+14   7.5    56.250553084       19.66892591
+15   8.0    64.000335463       20.02720171
+16   8.5    72.250203468       20.50166689
+17   9.0    81.000123410       21.13769694
+18   9.5    90.250074852       22.00095881
+19  10.0   100.000045400       23.18731381
+> library("neuralnet")
+> 
+> #Going to create a neural network to perform the rooting of such a function: x^2+exp(-x)
+> #Type ?neuralnet for more information on the neuralnet library
+> 
+> #Generate 6 random numbers uniformly distributed between 0 and 100 (for very good results in such a range)
+> #And store them as a dataframe
+> traininginput <- as.data.frame(runif(6, min=0, max=30))
+> trainingoutput <- exp(sqrt(traininginput))
+> 
+> #Column bind the data into one variable
+> trainingdata <- cbind(traininginput,trainingoutput)
+> colnames(trainingdata) <- c("Input","Output")
+> 
+> #Train the neural network
+> #Going to have C(5, 3) hidden layers
+> #Threshold is a numeric value specifying the threshold for the partial
+> #derivatives of the error function as stopping criteria.
+> net.myfunc <- neuralnet(Output~Input, trainingdata, hidden=c(5, 3), threshold=0.01)
+> print(net.myfunc)
+$call
+neuralnet(formula = Output ~ Input, data = trainingdata, hidden = c(5, 
+    3), threshold = 0.01)
+
+$response
+         Output
+1 228.594404962
+2  52.091303810
+3  78.821895778
+4  32.744002057
+5  54.281171363
+6   2.468006515
+
+$covariate
+              [,1]
+[1,] 29.5060729352
+[2,] 15.6261933572
+[3,] 19.0723556885
+[4,] 12.1711658570
+[5,] 15.9534532204
+[6,]  0.8161509759
+
+$model.list
+$model.list$response
+[1] "Output"
+
+$model.list$variables
+[1] "Input"
+
+
+$err.fct
+function (x, y) 
+{
+    1/2 * (y - x)^2
+}
+<bytecode: 0x0000000011e60470>
+<environment: 0x00000000117b1a18>
+attr(,"type")
+[1] "sse"
+
+$act.fct
+function (x) 
+{
+    1/(1 + exp(-x))
+}
+<bytecode: 0x000000001bcdcb20>
+<environment: 0x00000000117b1a18>
+attr(,"type")
+[1] "logistic"
+
+$linear.output
+[1] TRUE
+
+$data
+          Input        Output
+1 29.5060729352 228.594404962
+2 15.6261933572  52.091303810
+3 19.0723556885  78.821895778
+4 12.1711658570  32.744002057
+5 15.9534532204  54.281171363
+6  0.8161509759   2.468006515
+
+$net.result
+$net.result[[1]]
+          [,1]
+1 228.59440271
+2  52.10779303
+3  78.82240920
+4  32.74341277
+5  54.26509844
+6   2.46825589
+
+
+$weights
+$weights[[1]]
+$weights[[1]][[1]]
+              [,1]         [,2]          [,3]          [,4]
+[1,]  6.4350920634  90.39513858 -4.9443695512 -7.6063580897
+[2,] -0.2448172937 -65.74458495  0.1731343887  0.2890338404
+              [,5]
+[1,]  5.2506763721
+[2,] -0.6418255628
+
+$weights[[1]][[2]]
+               [,1]           [,2]            [,3]
+[1,]    1.418087419    5.128397014    0.3995749846
+[2,]  -10.786028679   -6.048158929   -5.7052992348
+[3,] -626.987596196 -705.641524122 -699.0704352089
+[4,]    5.218491250    6.121229254    4.7788865308
+[5,]    6.948633150    9.971363266   13.4579852766
+[6,]  -75.329885437   -3.376026593   -5.5766633533
+
+$weights[[1]][[3]]
+            [,1]
+[1,]  2.46825589
+[2,] 71.82529920
+[3,] 77.59773789
+[4,] 76.91270273
+
+
+
+$startweights
+$startweights[[1]]
+$startweights[[1]][[1]]
+               [,1]          [,2]          [,3]
+[1,]  0.12095862857 -0.3324535412 -0.3362138683
+[2,] -0.02399939108  0.3867377396 -0.6883652926
+              [,4]          [,5]
+[1,] -0.1814440048 -0.6514003893
+[2,]  1.1650423727 -0.3885353816
+
+$startweights[[1]][[2]]
+              [,1]          [,2]           [,3]
+[1,] -0.1704545106 -0.7631492743 -0.08015652918
+[2,] -0.4284227780 -0.7754157104 -0.38488892774
+[3,]  0.8609710077 -1.1070152988  1.63407893349
+[4,]  0.6101204084 -1.0456941318 -0.73598569366
+[5,]  0.3050987608 -0.5682333895 -2.47419326472
+[6,] -0.9395075069 -0.4333792436  0.70521554025
+
+$startweights[[1]][[3]]
+               [,1]
+[1,] -0.61110685341
+[2,] -0.53196401878
+[3,] -1.55839529049
+[4,]  0.03517621903
+
+
+
+$generalized.weights
+$generalized.weights[[1]]
+                [,1]
+1 -0.000004825617572
+2 -0.002427853022639
+3 -0.001538263147807
+4 -0.005307190513614
+5 -0.002324404127020
+6  0.000000000000000
+
+
+$result.matrix
+                                        1
+error                     0.0002654532102
+reached.threshold         0.0098871528689
+steps                 15934.0000000000000
+Intercept.to.1layhid1     6.4350920634317
+Input.to.1layhid1        -0.2448172936724
+Intercept.to.1layhid2    90.3951385777929
+Input.to.1layhid2       -65.7445849455475
+Intercept.to.1layhid3    -4.9443695511686
+Input.to.1layhid3         0.1731343886909
+Intercept.to.1layhid4    -7.6063580896522
+Input.to.1layhid4         0.2890338403671
+Intercept.to.1layhid5     5.2506763720633
+Input.to.1layhid5        -0.6418255627689
+Intercept.to.2layhid1     1.4180874188941
+1layhid.1.to.2layhid1   -10.7860286789278
+1layhid.2.to.2layhid1  -626.9875961960117
+1layhid.3.to.2layhid1     5.2184912496071
+1layhid.4.to.2layhid1     6.9486331501857
+1layhid.5.to.2layhid1   -75.3298854367335
+Intercept.to.2layhid2     5.1283970137532
+1layhid.1.to.2layhid2    -6.0481589293365
+1layhid.2.to.2layhid2  -705.6415241218149
+1layhid.3.to.2layhid2     6.1212292540590
+1layhid.4.to.2layhid2     9.9713632657672
+1layhid.5.to.2layhid2    -3.3760265926068
+Intercept.to.2layhid3     0.3995749845742
+1layhid.1.to.2layhid3    -5.7052992347983
+1layhid.2.to.2layhid3  -699.0704352089356
+1layhid.3.to.2layhid3     4.7788865308164
+1layhid.4.to.2layhid3    13.4579852766227
+1layhid.5.to.2layhid3    -5.5766633533304
+Intercept.to.Output       2.4682558899701
+2layhid.1.to.Output      71.8252991970611
+2layhid.2.to.Output      77.5977378945763
+2layhid.3.to.Output      76.9127027271735
+
+attr(,"class")
+[1] "nn"
+> 
+> #Plot the neural network
+> plot(net.myfunc)
+> 
+> #Test the neural network on some training data
+> testdata <- as.data.frame((2:20)*0.5) #Generate some numbers between 1 and 10
+> net.results <- compute(net.myfunc, testdata) #Run them through the neural network
+> 
+> #Lets see what properties net.myfunc has
+> ls(net.results)
+[1] "net.result" "neurons"   
+> 
+> #Lets see the results
+> print(net.results$net.result)
+              [,1]
+ [1,]  2.468255890
+ [2,]  3.446764377
+ [3,]  3.677349458
+ [4,]  3.716072932
+ [5,]  3.767714169
+ [6,]  3.837474486
+ [7,]  3.932920007
+ [8,]  4.065168160
+ [9,]  4.250684055
+[10,]  4.513920096
+[11,]  4.890934963
+[12,]  5.433647663
+[13,]  6.213092529
+[14,]  7.317674700
+[15,]  8.840103510
+[16,] 10.848565951
+[17,] 13.348888062
+[18,] 16.260516449
+[19,] 19.430216026
+> 
+> #Lets display a better version of the results
+> cleanoutput <- cbind(testdata,(testdata^2)+exp(-testdata),
++                      as.data.frame(net.results$net.result))
+> colnames(cleanoutput) <- c("Input","Expected Output","Neural Net Output")
+> print(cleanoutput)
+   Input Expected Output Neural Net Output
+1    1.0     1.367879441       2.468255890
+2    1.5     2.473130160       3.446764377
+3    2.0     4.135335283       3.677349458
+4    2.5     6.332084999       3.716072932
+5    3.0     9.049787068       3.767714169
+6    3.5    12.280197383       3.837474486
+7    4.0    16.018315639       3.932920007
+8    4.5    20.261108997       4.065168160
+9    5.0    25.006737947       4.250684055
+10   5.5    30.254086771       4.513920096
+11   6.0    36.002478752       4.890934963
+12   6.5    42.251503439       5.433647663
+13   7.0    49.000911882       6.213092529
+14   7.5    56.250553084       7.317674700
+15   8.0    64.000335463       8.840103510
+16   8.5    72.250203468      10.848565951
+17   9.0    81.000123410      13.348888062
+18   9.5    90.250074852      16.260516449
+19  10.0   100.000045400      19.430216026
