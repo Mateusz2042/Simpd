@@ -16,8 +16,8 @@ traininginput <- as.data.frame(matrix(c(24.3,100-25600,1,
                                         24.2,100-51200,1,
                                         18.84,100-25600,0,
                                         16.0,200-25600,1,
-                                        24.3,100-25600,0,), nrow=12, ncol=3))
-trainingoutput <- c(269, 379, 349, 299, 299, 160, 499, 259, 2699, 419, 269, 489, 189, 369, 319, 399, 200, 269, 159, 419)
+                                        24.3,100-25600,0), nrow=12, ncol=3))
+trainingoutput <- c(1269, 1379, 2349, 1299, 2299, 2160, 1499, 2259, 2699, 1419, 2269, 1489)
 
 #Column bind the data into one variable
 trainingdata <- cbind(traininginput, trainingoutput)
