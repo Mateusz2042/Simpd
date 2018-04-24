@@ -1,131 +1,178 @@
 Version: 2.0
 
+#########################
+# Alternatives Section
+#
+
 Alternatives: &alternatives
+# Here, we list all the alternatives, together with their attributes. 
+# We can use these attributes later in the file when defining 
+# preferenceFunctions. The attributes can be quantitative or 
+# qualitative.
   Sony Alpha a6000 (ILCE-6000LB):
-    price: 2499
-    resolution: 24.3
-    rangeSensitivity: 100-25600
-    lens: Sony E 16-50 mm f/3.5-5.6 PZ OSS
+    cena: 2499
+    rozdzielczosc: 24.3
+    zakres: 100.25600
+    obiektyw: 1
   Fujifilm X-A10:
-    price: 1739
-    resolution: 16.3
-    rangeSensitivity: 100-25600
-    lens: XC 16-50mm f/3.5-5.6 OIS II
+    cena: 1739
+    rozdzielczosc: 16.3
+    zakres: 100.25600
+    obiektyw: 1
   Panasonic DC-GH5S:
-    price: 10199
-    resolution: 10.2
-    rangeSensitivity: 160-51200
-    lens: -
+    cena: 10199
+    rozdzielczosc: 10.2
+    zakres: 160.51200
+    obiektyw: 0
   Sony Alpha a5100 (ILCE-5100L):
-    price: 1599
-    resolution: 24.3
-    rangeSensitivity: 100-25600
-    lens: Sony E 16-50 mm f/3.5-5.6 PZ OSS
+    cena: 1599
+    rozdzielczosc: 24.3
+    zakres: 100.25600
+    obiektyw: 1
   Panasonic Lumix DMC-G7 14-42:
-    price: 2499
-    resolution: 16.0
-    rangeSensitivity: 200-25600
-    lens: G Vario 14-42mm f/3,5-5,6 ASPH. MEGA O.I.S.
+    cena: 2499
+    rozdzielczosc: 16.0
+    zakres: 200.25600
+    obiektyw: 1
   Sony Alpha a7 II (ILCE-7M2):
-    price: 4999
-    resolution: 24.3
-    rangeSensitivity: 100-25600
-    lens: -
+    cena: 4999
+    rozdzielczosc: 24.3
+    zakres: 100.25600
+    obiektyw: 0
   Panasonic Lumix DMC-G80:
-    price: 3849
-    resolution: 16.0
-    rangeSensitivity: 200-25600
-    lens: Lumix G Vario 12-60mm / f3,5-5.6 ASPH. / POWER O.I.S.
+    cena: 3849
+    rozdzielczosc: 16.0
+    zakres: 200.25600
+    obiektyw: 1
   Panasonic Lumix DMC-GX80:
-    price: 2449
-    resolution: 16.0
-    rangeSensitivity: 200-25600
-    lens: LUMIX G VARIO H-FS14140-K 14-140 mm f/3,5 - 5,6
+    cena: 2449
+    rozdzielczosc: 16.0
+    zakres: 200.25600
+    obiektyw: 1
   Sony Alpha a6300 (ILCE-6300L):
-    price: 4399
-    resolution: 24.2
-    rangeSensitivity: 100-51200
-    lens: Sony E 16-50 mm f/3.5-5.6 PZ OSS
+    cena: 4399
+    rozdzielczosc: 24.2
+    zakres: 100.51200
+    obiektyw: 1
   Panasonic Lumix DMC-GX800K:
-    price: 1699
-    resolution: 16.84
-    rangeSensitivity: 100-25600
-    lens: 
+    cena: 1699
+    rozdzielczosc: 16.84
+    zakres: 100.25600
+    obiektyw: 0
   Panasonic Lumix DMC-G7:
-    price: 2499
-    resolution: 16.0
-    rangeSensitivity: 200-25600
-    lens: LUMIX G VARIO 12-32mm / F3.5-5.6 ASPH. / MEGA O.I.S.
+    cena: 2499
+    rozdzielczosc: 16.0
+    zakres: 200.25600
+    obiektyw: 1
   Sony Alpha a7K - ILCE-7K:
-    price: 3495
-    resolution: 24.3
-    rangeSensitivity: 100-25600
-    lens: -
+    cena: 3495
+    rozdzielczosc: 24.3
+    zakres: 100.25600
+    obiektyw: 0
+#
+# End of Alternatives Section
+#####################################
+
+#####################################
+# Goal Section
+#
+
+
 Goal:
-  name: Choosing camera
+# The goal spans a tree of criteria and the alternatives
+  name: Zakup aparatu
+  description: >
+    This is a classic single decision maker problem. It models
+    the situation facing by a family that wants to buy a new fridge.
+ 
   decision-makers:
-    #optional node, needed only if not all decision-makers have equal voting power
-    - Dad: 0.4
-    - Mom: 0.4
-    - Kid: 0.2
+    - Ojciec: 0.4
+    - Matka: 0.4
+    - Dziecko: 0.2
   preferences:
-    Dad:
+    # preferences are typically defined pairwise
+    # 1 means: A is equal to B
+    # 9 means: A is highly preferrable to B
+    # 1/9 means: B is highly preferrable to A
+    Ojciec:
       pairwise:
-      - [price, resolution, 4]
-      - [price, rangeSensitivity, 9]
-      - [resolution, rangeSensitivity, 4]
-    Mom:
+        - [Wydajnosc, Jakosc, 3]
+        - [Wydajnosc, Styl, 9]
+        - [Wydajnosc, Cena, 5]
+        - [Jakosc, Styl, 7]
+        - [Jakosc, Cena, 1]
+        - [Styl, Cena, 1/9]
+    Matka:
       pairwise:
-      - [price, resolution, 1/4]
-      - [price, rangeSensitivity, 1/9]
-      - [resolution, rangeSensitivity, 1/5]
-    Kid:
+        - [Wydajnosc, Jakosc, 2]
+        - [Wydajnosc, Styl, 6]
+        - [Wydajnosc, Cena, 1/3]
+        - [Jakosc, Styl, 4]
+        - [Jakosc, Cena, 1/6]
+        - [Styl, Cena, 1/7]
+    Dziecko:
       pairwise:
-      - [price, resolution, 1/9]
-      - [price, rangeSensitivity, 1]
-      - [resolution, rangeSensitivity, 9]
-  children:
-    prices:
+        - [Wydajnosc, Jakosc, 1/2]
+        - [Wydajnosc, Styl, 1/6]
+        - [Wydajnosc, Cena, 1/2]
+        - [Jakosc, Styl, 1/6]
+        - [Jakosc, Cena, 1]
+        - [Styl, Cena, 6]
+  children: 
+    Wydajnosc: 
       preferences:
-        Dad:
+        Ojciec:       
+            pairwiseFunction: 
+                function(a1, a2) min(9, max(1/9, a2$rozdzielczosc/a1$rozdzielczosc))
+        Matka:   
+            scoreFunction:
+                function(a) -a$rozdzielczosc
+        Dziecko:       
+            scoreFunction:
+                function(a) -a$rozdzielczosc
+      children: *alternatives
+    Jakosc: 
+      preferences:
+        Ojciec:
+          # //
+          scoreFunction:
+              function(a) a$zakres
+        Matka:
+          # Komentarz - metoda porownywania (l) w parach
           pairwiseFunction: 
-            function(a1, a2) min(9, max(1/9, a2$price/a1$price))
-        Mom:
+              function(a1, a2) min(9, max(1/9, a2$zakres/a1$zakres))
+        Dziecko:
+          # Komentarz - ocena jakosci
           scoreFunction:
-            function(a) 1/a$price
+              function(a) a$zakres
       children: *alternatives
-    resolution:
+    Styl: 
       preferences:
-        Dad:
+        Ojciec:
+          scoreFunction: 
+              function(a) a$obiektyw
+        Matka:
+          scoreFunction: 
+             function(a) a$obiektyw
+        Dziecko:
+          scoreFunction: 
+              function(a) a$obiektyw
+      children: *alternatives
+    Cena: 
+      preferences:
+        Ojciec:
+          # Komentarz - ocena ceny
+          scoreFunction:
+              function(a) -a$cena
+        Matka:
+          # Komentarz - ocena ceny
+          scoreFunction:
+              function(a) -a$cena
+        Dziecko:
           pairwiseFunction: 
-            function(a1, a2) min(9, max(1/9, a1$resolution/a2$resolution))
-        Mom:
-          scoreFunction:
-            function(a) a$resolution
-        Kid:
-          priority:
-            - Sony Alpha a6000 (ILCE-6000LB): 1/12
-            - Fujifilm X-A10: 1/12
-            - Panasonic DC-GH5S: 1/12
-            - Sony Alpha a5100 (ILCE-5100L): 1/12
-            - Panasonic Lumix DMC-G7 14-42: 1/12
-            - Sony Alpha a7 II (ILCE-7M2): 1/12
-            - Panasonic Lumix DMC-G80: 1/12
-            - Panasonic Lumix DMC-GX80: 1/12
-            - Sony Alpha a6300 (ILCE-6300L): 1/12
-            - Panasonic Lumix DMC-GX800K: 1/12
-            - Panasonic Lumix DMC-G7: 1/12
-            - Sony Alpha a7K - ILCE-7K: 1/12
+              function(a1, a2) min(9, max(1/9, a2$cena/a1$cena))
       children: *alternatives
-    rangeSensitivity:
-      preferences:
-        Dad:
-          scoreFunction:
-            function(a) a$rangeSensitivity/2.5
-        Mom:
-          scoreFunction:
-            function(a) a$rangeSensitivity/2
-        Kid:
-          scoreFunction:
-            function(a) a$rangeSensitivity/0.5
-      children: *alternatives
+
+#
+# End of Goal Section
+#####################################

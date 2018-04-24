@@ -1,0 +1,94 @@
+> library(ahp)
+> cameraAhp <- Load('C:/Users/user/Desktop/Simpd/Lab04/cameraLab4.ahp')
+> Calculate(cameraAhp)
+> print(cameraAhp, priority = function(x) x$sparent$priority["total", x$name])
+                                levelName priority
+1  Zakup aparatu                                NA
+2   ¦--Wydajnosc                                NA
+3   ¦   ¦--Sony Alpha a6000 (ILCE-6000LB)       NA
+4   ¦   ¦--Fujifilm X-A10                       NA
+5   ¦   ¦--Panasonic DC-GH5S                    NA
+6   ¦   ¦--Sony Alpha a5100 (ILCE-5100L)        NA
+7   ¦   ¦--Panasonic Lumix DMC-G7 14-42         NA
+8   ¦   ¦--Sony Alpha a7 II (ILCE-7M2)          NA
+9   ¦   ¦--Panasonic Lumix DMC-G80              NA
+10  ¦   ¦--Panasonic Lumix DMC-GX80             NA
+11  ¦   ¦--Sony Alpha a6300 (ILCE-6300L)        NA
+12  ¦   ¦--Panasonic Lumix DMC-GX800K           NA
+13  ¦   ¦--Panasonic Lumix DMC-G7               NA
+14  ¦   °--Sony Alpha a7K - ILCE-7K             NA
+15  ¦--Jakosc                                   NA
+16  ¦   ¦--Sony Alpha a6000 (ILCE-6000LB)       NA
+17  ¦   ¦--Fujifilm X-A10                       NA
+18  ¦   ¦--Panasonic DC-GH5S                    NA
+19  ¦   ¦--Sony Alpha a5100 (ILCE-5100L)        NA
+20  ¦   ¦--Panasonic Lumix DMC-G7 14-42         NA
+21  ¦   ¦--Sony Alpha a7 II (ILCE-7M2)          NA
+22  ¦   ¦--Panasonic Lumix DMC-G80              NA
+23  ¦   ¦--Panasonic Lumix DMC-GX80             NA
+24  ¦   ¦--Sony Alpha a6300 (ILCE-6300L)        NA
+25  ¦   ¦--Panasonic Lumix DMC-GX800K           NA
+26  ¦   ¦--Panasonic Lumix DMC-G7               NA
+27  ¦   °--Sony Alpha a7K - ILCE-7K             NA
+28  ¦--Styl                                     NA
+29  ¦   ¦--Sony Alpha a6000 (ILCE-6000LB)       NA
+30  ¦   ¦--Fujifilm X-A10                       NA
+31  ¦   ¦--Panasonic DC-GH5S                    NA
+32  ¦   ¦--Sony Alpha a5100 (ILCE-5100L)        NA
+33  ¦   ¦--Panasonic Lumix DMC-G7 14-42         NA
+34  ¦   ¦--Sony Alpha a7 II (ILCE-7M2)          NA
+35  ¦   ¦--Panasonic Lumix DMC-G80              NA
+36  ¦   ¦--Panasonic Lumix DMC-GX80             NA
+37  ¦   ¦--Sony Alpha a6300 (ILCE-6300L)        NA
+38  ¦   ¦--Panasonic Lumix DMC-GX800K           NA
+39  ¦   ¦--Panasonic Lumix DMC-G7               NA
+40  ¦   °--Sony Alpha a7K - ILCE-7K             NA
+41  °--Cena                                     NA
+42      ¦--Sony Alpha a6000 (ILCE-6000LB)       NA
+43      ¦--Fujifilm X-A10                       NA
+44      ¦--Panasonic DC-GH5S                    NA
+45      ¦--Sony Alpha a5100 (ILCE-5100L)        NA
+46      ¦--Panasonic Lumix DMC-G7 14-42         NA
+47      ¦--Sony Alpha a7 II (ILCE-7M2)          NA
+48      ¦--Panasonic Lumix DMC-G80              NA
+49      ¦--Panasonic Lumix DMC-GX80             NA
+50      ¦--Sony Alpha a6300 (ILCE-6300L)        NA
+51      ¦--Panasonic Lumix DMC-GX800K           NA
+52      ¦--Panasonic Lumix DMC-G7               NA
+53      °--Sony Alpha a7K - ILCE-7K             NA
+> Visualize(cameraAhp)
+> Analyze(cameraAhp)
+                Weight Panasonic DC-GH5S Sony Alpha a6300 (ILCE-6300L)
+1 Zakup aparatu 100.0%             10.9%                          9.5%
+2  ¦--Wydajnosc  34.1%              2.9%                          3.0%
+3  ¦--Cena       33.6%              6.7%                          3.2%
+4  ¦--Styl       16.6%              0.0%                          2.1%
+5  °--Jakosc     15.6%              1.3%                          1.2%
+  Panasonic Lumix DMC-G80 Sony Alpha a6000 (ILCE-6000LB) Panasonic Lumix DMC-G7 14-42
+1                    9.1%                           8.5%                         8.4%
+2                    2.7%                           3.0%                         2.7%
+3                    2.9%                           2.2%                         2.2%
+4                    2.1%                           2.1%                         2.1%
+5                    1.5%                           1.2%                         1.5%
+  Panasonic Lumix DMC-G7 Panasonic Lumix DMC-GX80 Sony Alpha a5100 (ILCE-5100L)
+1                   8.4%                     8.4%                          8.3%
+2                   2.7%                     2.7%                          3.0%
+3                   2.2%                     2.2%                          2.0%
+4                   2.1%                     2.1%                          2.1%
+5                   1.5%                     1.5%                          1.2%
+  Fujifilm X-A10 Sony Alpha a7 II (ILCE-7M2) Sony Alpha a7K - ILCE-7K
+1           8.0%                        7.7%                     6.9%
+2           2.7%                        3.0%                     3.0%
+3           2.0%                        3.5%                     2.7%
+4           2.1%                        0.0%                     0.0%
+5           1.2%                        1.2%                     1.2%
+  Panasonic Lumix DMC-GX800K Inconsistency
+1                       5.9%          8.9%
+2                       2.7%          0.0%
+3                       2.0%          0.0%
+4                       0.0%            NA
+5                       1.2%          0.0%
+> AnalyzeTable(cameraAhp)
+> AnalyzeTable(cameraAhp, decisionMaker = "Ojciec")
+> AnalyzeTable(cameraAhp, decisionMaker = "Matka")
+> AnalyzeTable(cameraAhp, decisionMaker = "Dziecko")
