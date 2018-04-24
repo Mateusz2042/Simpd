@@ -1,0 +1,53 @@
+library("MCDA")
+library("OutrankingTools")
+library("topsis")
+
+epsilon <-0.01
+
+# the performance table
+performanceTable <- rbind(
+  c(24.3,100-25600,2499),
+  c(16.3,100-25600,1739),
+  c(10.2,160-51200,10199),
+  c(24.3,100-25600,1999),
+  c(16.0,200-25600,2499),
+  c(24.3,100-25600,4999),
+  c(16.0,200-25600,3849),
+  c(16.0,200-25600,2449),
+  c(24.2,100-51200,4399),
+  c(18.84,100-25600,1699),
+  c(16.0,200-25600,2499),
+  c(24.3,100-25600,3495)
+)
+
+rownames(performanceTable) <- c(
+  "Sony Alpha a6000 (ILCE-6000LB)",
+  "Fujifilm X-A10",
+  "Panasonic DC-GH5S",
+  "Sony Alpha a5100 (ILCE-5100L)",
+  "Panasonic Lumix DMC-G7 14-42",
+  "Sony Alpha a7 II (ILCE-7M2)",
+  "Panasonic Lumix DMC-G80",
+  "Panasonic Lumix DMC-GX80",
+  "Sony Alpha a6300 (ILCE-6300L)",
+  "Panasonic Lumix DMC-GX800K",
+  "Panasonic Lumix DMC-G7",
+  "Sony Alpha a7K - ILCE-7K"
+)
+colnames(performanceTable) <- c(
+  "Resolution",
+  "RangeSensitivity",
+  "Price"
+)
+# ranks of the alternatives
+alternativesRanks <- c(1,2,3,4,5,6,7,8,9,10,11,12)
+
+names(alternativesRanks) <- row.names(performanceTable)
+
+# criteria to minimize or maximize
+criteriaMinMax <- c("max","max","min")
+names(criteriaMinMax) <- colnames(performanceTable)
+
+w <- c(0.5,0.25,0.25)
+
+x <- TOPSISLinear(performanceTable,w,criteriaMinMax)
