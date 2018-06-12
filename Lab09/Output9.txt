@@ -1,0 +1,79 @@
+> library("C50")
+> data <- matrix(c(100.25600, 100.25600, 160.51200, 100.25600, 200.25600, 100.25600, 200.25600, 200.25600, 100.51200, 100.25600, 200.25600, 100.25600,
++                  1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0,
++                  24.3, 16.3, 10.2, 24.3, 16.0, 24.3, 16.0, 16.0, 24.2, 16.84, 16.0, 24.3,
++                  2499, 1739, 10199, 1599, 2499, 4999, 3849, 2449, 4399, 1699, 2499, 3495), 12, 4)
+> labels <- c("1", "2", "3", "4","5")
+> result <- c(1, 4, 5, 4, 3, 4, 1, 2, 3, 2, 3, 2)
+> test <- factor(result, labels)
+> colnames(data) <- c("ZakresCzu³oœci", "Obiektyw", "Rozdzielczoœæ", "Cena")
+> ruleModel <- C5.0(x = data[,], y = test, rules = TRUE)
+> ruleModel
+
+Call:
+C5.0.default(x = data[, ], y = test, rules = TRUE)
+
+Rule-Based Model
+Number of samples: 12 
+Number of predictors: 4 
+
+Number of Rules: 3 
+
+Non-standard options: attempt to group attributes
+
+> summary(ruleModel)
+
+Call:
+C5.0.default(x = data[, ], y = test, rules = TRUE)
+
+
+C5.0 [Release 2.07 GPL Edition]  	Tue Jun 12 14:19:41 2018
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 12 cases (5 attributes) from undefined.data
+
+Rules:
+
+Rule 1: (4/2, lift 2.0)
+	Obiektyw <= 0
+	->  class 2  [0.500]
+
+Rule 2: (8/5, lift 1.6)
+	Obiektyw > 0
+	->  class 3  [0.400]
+
+Rule 3: (3/1, lift 2.4)
+	Obiektyw > 0
+	Cena <= 2449
+	->  class 4  [0.600]
+
+Default class: 2
+
+
+Evaluation on training data (12 cases):
+
+	        Rules     
+	  ----------------
+	    No      Errors
+
+	     3    5(41.7%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)    <-classified as
+	  ----  ----  ----  ----  ----
+	                 2                (a): class 1
+	           2           1          (b): class 2
+	                 3                (c): class 3
+	           1           2          (d): class 4
+	           1                      (e): class 5
+
+
+	Attribute usage:
+
+	100.00%	Obiektyw
+	 25.00%	Cena
+
+
+Time: 0.0 secs
